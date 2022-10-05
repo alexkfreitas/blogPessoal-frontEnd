@@ -4,7 +4,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import "./Login.css";
-import UsuarioLogin from "../../model/UsuarioLogin";
+import UsuarioLogin from "../../model/UserLogin";
 import { login } from "../../services/Service";
 import useLocalStorage from "react-use-localstorage";
 
