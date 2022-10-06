@@ -20,13 +20,13 @@ function Footer() {
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://github.com/alexkfreitas" target="_blank">
-                                <GitHubIcon className='redes' />
+                                <GitHubIcon className='redes github'  />
                             </a>
-                            <a href="https://www.linkedin.com/in/alex-katanosaka-freitas-237123199/" target="_blank">
-                                <LinkedInIcon className='redes'/>
+                            <a href="https://www.linkedin.com/in/alex-katanosaka-freitas-237123199/" target="_blank" >
+                                <LinkedInIcon className='redes linkedin'/>
                             </a>
-                            <a href="https://www.instagram.com/alexkatanosaka/" target="_blank">
-                                <InstagramIcon className='redes'/>
+                            <a href="https://www.instagram.com/alexkatanosaka/" target="_blank" className='instagram'>
+                                {/* <InstagramIcon className='redes instagram'/> */}
                             </a>
                         </Box>
                     </Box>

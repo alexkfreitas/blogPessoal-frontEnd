@@ -11,13 +11,44 @@
 .redes{
     font-size: 60px !important ;
      color: white;
-     transition: all 1s;
+     transition: all 1s !important;
 }
 
-.redes:hover{
-    transform: scale(1.2);
+.github:hover{
+    transform: scale(1.2) rotate(360deg);
     color: black;
 }
+
+.linkedin{
+    font-size: ;
+}
+
+.linkedin:hover{
+    transform: scale(1.2) rotate(360deg);
+    color: #48ade4;
+}
+
+
+
+  
+
+
+/* .instagram:hover{
+    color: linear-gradient(#5656cd, #dd6050, #9a36b7) !important; 
+    color: rgb(255, 0, 221);
+} */
+
+.instagram{
+    width: 60px;
+    height: 60px;
+    background-image: url("./../../../../img/ICONE-Instagram-Branco\ \(1\).png");
+    transition: all 1s;
+  }   
+.instagram:hover{
+    transform: scale(1.2) rotate(360deg) ;
+    background-image: url("./../../../../img/redimensionado.png");
+    transition: all 1s;
+  }
 
 .textos{
     color: white;

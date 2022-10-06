@@ -32,6 +32,8 @@ function Login() {
     async function conectar(event:ChangeEvent<HTMLFormElement>){
         event.preventDefault();
 
+        console.log(userLogin);
+        
         try{
           await login(`/usuarios/logar`,userLogin, setToken)
 
