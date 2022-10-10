@@ -16,19 +16,31 @@ function Footer() {
                 <Grid alignItems="center" item xs={12}>
                     <Box className='box1'>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-nos nas redes sociais </Typography>
+                            <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-me nas redes sociais </Typography>
                         </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://github.com/alexkfreitas" target="_blank">
-                                <GitHubIcon className='redes github'  />
+                        <Box className="icons" display="flex" justifyContent="center">
+                            <a
+                                href="https://www.instagram.com/alexkatanosaka/"
+                                className="icon icon--instagram"
+                                target="_blank"
+                            >
+                                <i className="ri-instagram-line"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/alex-katanosaka-freitas-237123199/" target="_blank" >
-                                <LinkedInIcon className='redes linkedin'/>
+                            <a
+                                href="https://www.linkedin.com/in/alexkatanosaka/"
+                                className="icon icon--linkedin"
+                                target="_blank"
+                            >
+                                <i className="ri-linkedin-line"></i>
                             </a>
-                            <a href="https://www.instagram.com/alexkatanosaka/" target="_blank" className='instagram'>
-                                {/* <InstagramIcon className='redes instagram'/> */}
+                            <a
+                                href="https://github.com/alexkfreitas"
+                                className="icon icon--github"
+                                target="_blank"
+                            >
+                                <i className="ri-github-line"></i>
                             </a>
-                        </Box>
+                            </Box>
                     </Box>
                     <Box className='box2'>
                         <Box paddingTop={1}>
