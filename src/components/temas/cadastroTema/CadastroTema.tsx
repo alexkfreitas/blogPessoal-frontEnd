@@ -6,6 +6,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../model/Tema';
 import { findByDisplayValue } from '@testing-library/react';
 import { buscaId, post, put } from '../../../services/Service';
+import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
@@ -20,7 +21,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if(token == ""){
-            alert("Você precisa estar logado!")
+            toast.error('Você precisa estar logado para acessar essa página!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
             navigate("/login")
         }
     },[token])
@@ -57,14 +67,32 @@ function CadastroTema() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado com sucesso');
+            toast.success('Tema atualizado com sucesso!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
         } else {
             post(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            toast.success('Tema cadastrado com sucesso!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
         }
         back()
 

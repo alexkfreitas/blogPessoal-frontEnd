@@ -24,3 +24,7 @@
 .btnCancelar{
     margin-right: 20px !important;
 }
+
+.MuiInputBase-input	{
+    background-color: aquamarine;
+}

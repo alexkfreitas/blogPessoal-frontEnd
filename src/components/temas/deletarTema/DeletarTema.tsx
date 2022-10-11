@@ -6,6 +6,7 @@ import { UNSAFE_NavigationContext, useNavigate, useParams } from 'react-router-d
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../model/Tema';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -16,7 +17,16 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+          toast.error('Você precisa estar logado para acessar essa página!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            theme: "colored",
+            progress: undefined
+        });
             navigate("/login")
     
         }
@@ -43,7 +53,16 @@ function DeletarTema() {
                 'Authorization': token
               }
             });
-            alert('Tema deletado com sucesso');
+            toast.success('Tema deletado com sucesso!', {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: false,
+              theme: "colored",
+              progress: undefined
+          });
           }
         
           function nao() {
