@@ -20,7 +20,7 @@ function Navbar() {
     return (
         <>
             <AppBar position="fixed" className='navbar-color'>
-                <Toolbar variant="dense">
+                <Toolbar variant="dense" className="">
                     <Grid alignItems="center" item xs={6}>
                         <Box>
                             <Typography variant="h5" className="titulo-blog">

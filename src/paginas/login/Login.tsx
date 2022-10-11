@@ -6,12 +6,15 @@ import { Button } from "@material-ui/core";
 import "./Login.css";
 import UsuarioLogin from "../../model/UserLogin";
 import { login } from "../../services/Service";
-import useLocalStorage from "react-use-localstorage";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 function Login() {
 
     let navigate = useNavigate()
-    const [token, setToken] = useLocalStorage('token')
+    const dispatch = useDispatch()
+    // const [token, setToken] = useLocalStorage('token')
+    const [token, setToken] = useState('')
     const[userLogin, setUserLogin] = useState<UsuarioLogin>({
         id:0,
         nome: '',
@@ -48,6 +51,7 @@ function Login() {
 
     useEffect(() => {
         if(token!==''){
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])
@@ -63,7 +67,9 @@ function Login() {
         <Grid xs={6} alignItems="center" >
           <Box paddingX={20}>
             <form onSubmit={conectar}>
-              <Typography variant="h3" gutterBottom color ='textPrimary' component='h3' align="center" className="textos1">Entrar</Typography>
+            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'><img src='https://i.imgur.com/RLltIpo.png' className='logo-size'></img></Typography>
+                        
+              <Typography variant="h3" gutterBottom color ='textPrimary' component='h3' align="center" className="textos1">Login</Typography>
 
               <TextField
                 onChange={(event:ChangeEvent<HTMLInputElement>)=>updateModel(event)}
@@ -87,8 +93,8 @@ function Login() {
                 margin="normal"
               />
             <Box marginTop={2} textAlign='center'>
-                    <Button type="submit" variant="contained" color="primary">
-                        Logar
+                    <Button type="submit" variant="contained" className='button-color'>
+                        Entrar
                     </Button>
             </Box>
                 
@@ -97,8 +103,8 @@ function Login() {
                 <Box marginRight={1}>
                     <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                 </Box>
-                    <Link to='/cadastrousuario'>
-                      <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                    <Link to='/cadastrousuario' className="text-decorator-none">
+                      <Typography  gutterBottom align='center' className='textos-link'>Cadastre-se</Typography>
                     </Link>
             </Box>
           </Box>

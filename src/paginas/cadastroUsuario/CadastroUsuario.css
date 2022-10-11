@@ -9,6 +9,16 @@
 
 .textos2{
     font-weight: bold !important;
+    color: black;
+}
+
+.textos-link{
+    font-weight: bold !important;
+    color: black;
+}
+
+.textos-link:hover{
+    text-decoration: underline;
 }
 
 .btnCancelar{

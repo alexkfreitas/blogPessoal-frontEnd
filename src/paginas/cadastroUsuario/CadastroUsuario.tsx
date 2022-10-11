@@ -83,17 +83,24 @@ function CadastroUsuario() {
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}id='confirmarSenha' label='Digite novamente a senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
-                                    Cancelar
-                                </Button>
-                            </Link>
-                            <Button type='submit' variant='contained' color='primary' disabled={!cadastro}>
+                           
+                            <Button type='submit' variant='contained' className='button-color' disabled={!cadastro}>
                                     Cadastrar
                             </Button>
                         </Box>
-                    </form>
-                </Box>
+                </form>
+
+                            <Box display='flex' justifyContent='center' marginTop={2}>
+                                <Box marginRight={1}>
+                                    <Typography variant='subtitle1' gutterBottom align='center'>Já possui uma conta?</Typography>
+                                </Box>
+                                    <Link to='/login' className="text-decorator-none">
+                                    <Typography  gutterBottom align='center' className='textos-link'>Login</Typography>
+                                    </Link>
+                            </Box>
+                        </Box>
+                    
+                
             </Grid>
 
 

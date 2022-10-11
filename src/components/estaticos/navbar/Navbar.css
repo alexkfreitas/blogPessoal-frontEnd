@@ -33,6 +33,7 @@
     background-color: black !important;
 }
 
+
 .itens-navbar{
     display: flex;
     justify-content: right !important;
@@ -58,7 +59,6 @@
   font-size: 30px;
   font-weight: bold;
   transition: all 0.5s;
-  
 }
 
 .material-symbols-outlined:hover{
