@@ -47,9 +47,7 @@ function Footer() {
                             <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2022 Copyright:</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://brasil.generation.org">
                                 <Typography variant="subtitle2" gutterBottom className='textos' align="center">Alex Katanosaka Freitas</Typography>
-                            </a>
                         </Box>
                     </Box>
                 </Grid>

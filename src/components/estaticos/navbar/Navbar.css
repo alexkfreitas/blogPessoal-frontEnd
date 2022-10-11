@@ -1,9 +1,66 @@
 .cursor{
     cursor: pointer;
     color: white;
+    transition: all 1s;
 }
 
+.cursor-home{
+    cursor: pointer;
+    color: white;
+}
+
+.cursor:hover{
+    transform: scale(1.1) !important;
+}
+
+.logo-size{
+    width: 40px;
+    height: auto;
+    align-items: center !important;
+}
 
 .text-decorator-none{
     text-decoration: none;
+}
+
+.titulo-blog{
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 50px !important;
+    color: white !important;
+}
+
+.navbar-color{
+    background-color: black !important;
+}
+
+.itens-navbar{
+    display: flex;
+    justify-content: right !important;
+}
+
+.itens-font{
+    display: inline;
+    margin: 0 10px !important;
+    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Peralta', cursive !important;
+    transition: all 0.5s;
+}
+
+.itens-font:hover{
+    color: orange !important;
+}
+
+.itens-navbar:hover{
+    
+}
+
+.material-symbols-outlined {
+  font-size: 30px;
+  font-weight: bold;
+  transition: all 0.5s;
+  
+}
+
+.material-symbols-outlined:hover{
+    color: orange !important;
 }

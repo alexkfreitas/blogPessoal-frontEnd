@@ -1,10 +1,10 @@
 .box1{
-    background-color: #3F51B5;
+    background-color: #040404;
     height: 120px;
 }
 
 .box2{
-    background-color: #303F9F;
+    background-color: #000000;
      height: 60px;
 }
 
@@ -100,8 +100,8 @@
 }
 
 .icon--github:hover {
-    background-color: black;
-    outline-color: black;
+    background-color: rgb(71, 71, 71);
+    outline-color: rgb(71, 71, 71);
 }
 
 @keyframes shake {

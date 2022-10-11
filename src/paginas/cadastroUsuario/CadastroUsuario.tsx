@@ -10,7 +10,12 @@ import './CadastroUsuario.css';
 function CadastroUsuario() {
 
     let navigate = useNavigate();
+
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+
+    const [cadastro, setCadastro] = useState(false)
+
+    
     const [user, setUser] = useState<Usuario>(
         {
             id:0,
@@ -20,6 +25,8 @@ function CadastroUsuario() {
             foto: ''
         })
 
+        
+
     const [userResult, setUserResult] = useState<Usuario>(
         {
             id: 0,
@@ -28,6 +35,12 @@ function CadastroUsuario() {
             senha: '',
             foto: ''
         })
+
+    useEffect(() => {
+        if(user.nome.length>3 && user.usuario !== '' && user.senha.length>=8){
+            setCadastro(true)
+        }
+    },[user])
 
     useEffect(() => {
         if (userResult.id != 0) {
@@ -75,7 +88,7 @@ function CadastroUsuario() {
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button type='submit' variant='contained' color='primary' disabled={!cadastro}>
                                     Cadastrar
                             </Button>
                         </Box>
