@@ -7,7 +7,7 @@ import "./Login.css";
 import UsuarioLogin from "../../model/UserLogin";
 import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+import { addToken, addId } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 
 function Login() {
@@ -25,6 +25,15 @@ function Login() {
         token: ''
     });
 
+    const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+      id: 0,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: '',
+      token: '',
+    });
+
     function updateModel(event: ChangeEvent<HTMLInputElement>){
         setUserLogin({
             ...userLogin,
@@ -35,11 +44,8 @@ function Login() {
 
     async function conectar(event:ChangeEvent<HTMLFormElement>){
         event.preventDefault();
-
-        console.log(userLogin);
-        
         try{
-          await login(`/usuarios/logar`,userLogin, setToken)
+          await login(`/usuarios/logar`,userLogin, setRespUserLogin);
 
           toast.success('Usuário logado com sucesso!', {
             position: "top-center",
@@ -73,7 +79,17 @@ function Login() {
             dispatch(addToken(token))
             navigate('/home')
         }
-    }, [token])
+    }, [token]);
+
+    useEffect(()=>{
+      if(respUserLogin.token !== ''){
+        dispatch(addToken(respUserLogin.token))
+        dispatch(addId(respUserLogin.id.toString()))
+        console.log ('Token:'+respUserLogin.token);
+        
+        navigate('/home');
+      }
+    },[respUserLogin.token])
     
   return (
     <>
@@ -87,15 +103,14 @@ function Login() {
           <Box paddingX={20}>
             <form onSubmit={conectar}>
             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'><img src='https://i.imgur.com/RLltIpo.png' className='logo-size'></img></Typography>
-                        
+            <Typography variant="h5" className="titulo-blog">Katanosaka Blog</Typography>
               <Typography variant="h3" gutterBottom color ='textPrimary' component='h3' align="center" className="textos1">Login</Typography>
-
               <TextField
                 onChange={(event:ChangeEvent<HTMLInputElement>)=>updateModel(event)}
                 value={userLogin.usuario}
                 id="usuario"
                 name="usuario"
-                label="Usuário"
+                label = "E-mail"
                 variant="filled"
                 fullWidth
                 margin="normal"
@@ -123,7 +138,7 @@ function Login() {
                     <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                 </Box>
                     <Link to='/cadastrousuario' className="text-decorator-none">
-                      <Typography  gutterBottom align='center' className='textos-link'>Cadastre-se</Typography>
+                      <Typography  gutterBottom align='center' className='textos-link'>Registre-se</Typography>
                     </Link>
             </Box>
           </Box>

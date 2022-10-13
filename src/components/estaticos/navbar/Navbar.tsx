@@ -40,7 +40,7 @@ function Navbar() {
         <Toolbar variant="dense" className="">
             <Grid alignItems="center" item xs={6}>
                 <Box>
-                    <Typography variant="h5" className="titulo-blog">
+                    <Typography variant="h5" className="titulo-blog-navbar">
                     Katanosaka Blog
                     </Typography>
                 </Box>

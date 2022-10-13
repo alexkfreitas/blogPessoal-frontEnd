@@ -11,16 +11,18 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function ListaPostagem() {
-  const [posts, setPosts] = useState<Postagem[]>([])
-
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  )
-
   let navigate = useNavigate();
 
+  const [posts, setPosts] = useState<Postagem[]>([]);
+
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
+
+  const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
+
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
       toast.error('Você precisa estar logado para acessar essa página!', {
         position: "top-center",
         autoClose: 2000,
@@ -37,11 +39,13 @@ function ListaPostagem() {
   }, [token])
 
   async function getPost() {
+    console.log('Token:'+token);
+    
     await busca("/postagens", setPosts, {
       headers: {
-        'Authorization': token
-      }
-    })
+        Authorization: token
+      },
+    });
   }
 
   useEffect(() => {
@@ -65,6 +69,9 @@ function ListaPostagem() {
                 </Typography>
                 <Typography variant="body2" component="p">
                   {post.tema?.descricao}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  Autor da postagem: {post.usuario?.nome}
                 </Typography>
               </CardContent>
               <CardActions>

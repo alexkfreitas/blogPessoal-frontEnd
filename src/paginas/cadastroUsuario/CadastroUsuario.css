@@ -15,10 +15,11 @@
 .textos-link{
     font-weight: bold !important;
     color: black;
+    transition: all 0.5s;
 }
 
 .textos-link:hover{
-    text-decoration: underline;
+    color: rgb(87, 87, 87)
 }
 
 .btnCancelar{
