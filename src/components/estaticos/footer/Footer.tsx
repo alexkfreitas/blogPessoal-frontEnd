@@ -11,7 +11,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 
 // const roxin = purple[600];
 
-function Footer() {
+export function Footer() {
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -68,5 +68,3 @@ function Footer() {
         </>
     )
 }
-
-export default Footer;

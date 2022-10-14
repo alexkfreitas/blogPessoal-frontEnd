@@ -3,13 +3,13 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaTema.css';
 import { Box } from '@mui/material';
-import Tema from '../../../model/Tema';
 import { busca } from '../../../services/Service';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Tema } from '../../../model/Tema';
 
-function ListaTema() {
+export function ListaTema() {
 
     let navigate = useNavigate();
   const[temas, setTemas] = useState<Tema[]>([]);
@@ -83,5 +83,3 @@ function ListaTema() {
   );
 }
 
-
-export default ListaTema;

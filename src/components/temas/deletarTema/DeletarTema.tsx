@@ -4,13 +4,13 @@ import { Box } from '@mui/system';
 import './DeletarTema.css';
 import { UNSAFE_NavigationContext, useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
-import Tema from '../../../model/Tema';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Tema } from '../../../model/Tema';
 
 
-function DeletarTema() {
+export function DeletarTema() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -105,4 +105,3 @@ function DeletarTema() {
     </>
   );
 }
-export default DeletarTema;

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Usuario from "../../model/User";
 import { buscaId } from "../../services/Service";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import React from 'react'
 import { Container, Grid, Typography } from "@material-ui/core";
-
 import './Perfil.css'
 import { Avatar } from "@mui/material";
+import { Usuario } from "../../model/User";
 
-function Perfil() {
+export function Perfil() {
 
 const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens
@@ -51,8 +50,8 @@ return (
               {usuario.nome}
             </Typography>
           </Grid>
-          <Grid xs={9} justifyContent="center">
-            <Typography variant="h4" align="center">
+          <Grid xs={9} className = 'postagens'>
+            <Typography variant="h4" align="center" className='postagens-titulo'>
               Postagens de {usuario.nome}
             </Typography>
             Você tem um total de {usuario.postagem?.length} postagens feita
@@ -72,4 +71,3 @@ return (
   );
 
 }
-export default Perfil

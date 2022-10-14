@@ -1,14 +1,14 @@
 import React , {useState, useEffect, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Usuario from '../../model/User';
 import { cadastroUsuario } from '../../services/Service';
 import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { toast } from 'react-toastify';
+import { Usuario } from '../../model/User';
 
-function CadastroUsuario() {
+export function CadastroUsuario() {
 
     let navigate = useNavigate();
 
@@ -127,5 +127,3 @@ function CadastroUsuario() {
         </Grid>
     );
 }
-
-export default CadastroUsuario;

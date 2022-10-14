@@ -1,4 +1,4 @@
-interface UserLogin{
+export interface UserLogin{
     id: number;
     nome: string;
     usuario: string;
@@ -6,5 +6,3 @@ interface UserLogin{
     foto: string;
     token: string
 }
-
-export default UserLogin

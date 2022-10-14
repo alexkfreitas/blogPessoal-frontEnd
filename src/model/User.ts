@@ -1,6 +1,6 @@
-import Postagem from "./Postagem";
+import { Postagem } from "./Postagem";
 
-interface Usuario{
+export interface Usuario{
     id: number;
     nome: string;
     usuario: string;
@@ -8,5 +8,3 @@ interface Usuario{
     foto: string;
     postagem?: Postagem[]
 }
-
-export default Usuario

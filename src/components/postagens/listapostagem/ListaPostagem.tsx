@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Postagem from '../../../model/Postagem'
 import { busca } from '../../../services/Service'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { Box } from '@mui/system';
@@ -9,8 +8,9 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import { Postagem } from '../../../model/Postagem';
 
-function ListaPostagem() {
+export function ListaPostagem() {
   let navigate = useNavigate();
 
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -98,5 +98,3 @@ function ListaPostagem() {
     </>
   )
 }
-
-export default ListaPostagem;

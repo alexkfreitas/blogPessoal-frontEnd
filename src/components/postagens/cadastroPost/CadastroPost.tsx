@@ -2,16 +2,16 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import Tema from '../../../model/Tema';
 // import useLocalStorage from 'react-use-localstorage';
 import { busca, buscaId, post, put } from '../../../services/Service';
-import Postagem from '../../../model/Postagem';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import Usuario from '../../../model/User';
+import { Tema } from '../../../model/Tema';
+import { Postagem } from '../../../model/Postagem';
+import { Usuario } from '../../../model/User';
 
-function CadastroPost() {
+export function CadastroPost() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
@@ -183,4 +183,3 @@ function CadastroPost() {
         </Container>
     )
 }
-export default CadastroPost;

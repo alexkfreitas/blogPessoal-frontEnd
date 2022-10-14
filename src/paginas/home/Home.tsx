@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import {Typography, Grid, Button} from '@material-ui/core';
 import { Box } from '@mui/material';
 import './Home.css';
-import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
-import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import { TabPostagem } from '../../components/postagens/tabpostagem/TabPostagem';
+import { ModalPostagem } from '../../components/postagens/modalPostagem/ModalPostagem';
 
-function Home() {
+
+export function Home() {
 
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -61,5 +62,3 @@ function Home() {
         </>
     );
 }
-
-export default Home;

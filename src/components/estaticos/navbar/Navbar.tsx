@@ -10,7 +10,7 @@ import { addToken } from '../../../store/tokens/actions';
 import {toast} from 'react-toastify';
 
 
-function Navbar() {
+export function Navbar() {
     // const [token, setToken] = useLocalStorage('token');
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -103,5 +103,3 @@ function Navbar() {
         </>
     )
 }
-
-export default Navbar;

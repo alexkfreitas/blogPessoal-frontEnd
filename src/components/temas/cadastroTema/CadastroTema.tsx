@@ -2,15 +2,15 @@ import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import './CadastroTema.css'
 import { useNavigate, useParams } from 'react-router-dom'
-import Tema from '../../../model/Tema';
 import { findByDisplayValue } from '@testing-library/react';
 import { buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Tema } from '../../../model/Tema';
 
 
-function CadastroTema() {
+export function CadastroTema() {
   
     let navigate = useNavigate();
     const{id} = useParams<{id: string}>();
@@ -119,5 +119,3 @@ function CadastroTema() {
         </Container>
     )
 }
-
-export default CadastroTema;

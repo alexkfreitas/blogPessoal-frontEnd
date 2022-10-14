@@ -3,12 +3,21 @@
 }
 
 .fPerfil{
-    width: 15rem;
-    height: 15rem;
-    margin: 0 auto;
+    width: 15rem !important;
+    height: 15rem !important;
+    margin: 0 auto !important;
   }
   
   .testeper{
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .postagens{
+    justify-content: center;
+    margin: auto auto auto 200px;
+  }
+
+  .postagens-titulo{
+    margin-bottom: 30px !important;
   }

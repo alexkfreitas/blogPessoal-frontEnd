@@ -4,12 +4,12 @@ import { Box } from '@mui/material';
 import './DeletarPostagem.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
-import Postagem from '../../../model/Postagem';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Postagem } from '../../../model/Postagem';
 
-function DeletarPostagem() {
+export function DeletarPostagem() {
 
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
@@ -106,4 +106,3 @@ function DeletarPostagem() {
     </>
   );
 }
-export default DeletarPostagem;

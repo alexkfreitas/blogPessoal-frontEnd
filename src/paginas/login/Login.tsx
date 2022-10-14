@@ -4,20 +4,19 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import "./Login.css";
-import UsuarioLogin from "../../model/UserLogin";
 import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
 import { addToken, addId } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
-import { AccountCircle } from "@material-ui/icons";
+import { UserLogin } from "../../model/UserLogin";
 
-function Login() {
+export function Login() {
 
     let navigate = useNavigate()
     const dispatch = useDispatch()
     // const [token, setToken] = useLocalStorage('token')
     const [token, setToken] = useState('')
-    const[userLogin, setUserLogin] = useState<UsuarioLogin>({
+    const[userLogin, setUserLogin] = useState<UserLogin>({
         id:0,
         nome: '',
         usuario: '',
@@ -26,7 +25,7 @@ function Login() {
         token: ''
     });
 
-    const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
       id: 0,
       nome: '',
       usuario: '',
@@ -151,5 +150,3 @@ function Login() {
     </>
   );
 }
-
-export default Login;
