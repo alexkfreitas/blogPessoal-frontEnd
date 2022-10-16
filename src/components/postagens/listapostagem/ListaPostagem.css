@@ -2,9 +2,10 @@
     text-decoration: none;
 }
 
-.color-black{
-    color: white !important;
-    background-color: black !important;
+
+
+.MuiBotton-containedPrimary{
+    background-color: black;
 }
 
 

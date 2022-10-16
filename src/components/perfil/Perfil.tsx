@@ -50,7 +50,7 @@ return (
               {usuario.nome}
             </Typography>
           </Grid>
-          <Grid xs={9} className = 'postagens'>
+          <Grid xs={9} className = 'postagens-perfil'>
             <Typography variant="h4" align="center" className='postagens-titulo'>
               Postagens de {usuario.nome}
             </Typography>

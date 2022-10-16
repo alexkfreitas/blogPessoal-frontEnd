@@ -16,6 +16,7 @@ export function Login() {
     const dispatch = useDispatch()
     // const [token, setToken] = useLocalStorage('token')
     const [token, setToken] = useState('')
+    const [entrar, setEntrar] = useState(false)
     const[userLogin, setUserLogin] = useState<UserLogin>({
         id:0,
         nome: '',
@@ -75,6 +76,15 @@ export function Login() {
     }
 
     useEffect(() => {
+      if(userLogin.usuario.length >= 4 &&  userLogin.senha.length>=8){
+          setEntrar(true)
+      } else{
+        setEntrar(false)
+      }
+    },[userLogin])
+
+
+    useEffect(() => {
         if(token!==''){
             dispatch(addToken(token))
             navigate('/home')
@@ -112,6 +122,7 @@ export function Login() {
                 name="usuario"
                 label = "E-mail"
                 variant="filled"
+                type="e-mail"
                 fullWidth
                 margin="normal"
               />
@@ -127,7 +138,7 @@ export function Login() {
                 margin="normal"
               />
             <Box marginTop={2} textAlign='center'>
-                    <Button type="submit" variant="contained" className='button-color'>
+                    <Button type="submit" variant="contained" disabled={!entrar}>
                         Entrar
                     </Button>
             </Box>
