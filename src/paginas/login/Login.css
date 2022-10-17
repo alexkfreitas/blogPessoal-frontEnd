@@ -1,3 +1,21 @@
+/* body{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(108,108,108,1) 100%);
+
+} */
+
+.login{
+    margin-top: 60px;
+    
+}
+
+.box{
+    border-radius: 30px;
+    border-color: blue;
+    border-style: double;
+    padding: 30px;
+    background: lightgray;
+}
+
 .textos1{
     font-weight:bold !important;
     color: black;

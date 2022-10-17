@@ -1,4 +1,3 @@
-import {Grid} from '@material-ui/core';
 import './App.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
@@ -18,12 +17,14 @@ import { store } from './store/store';
 import { Login } from './paginas/login/Login';
 import { Home } from './paginas/home/Home';
 
+
 function App() {
   return (
     <Provider store={store}>
       <ToastContainer />
       <BrowserRouter>
           <Navbar />
+          
           <div style={{minHeight: '100vh'}}>
             <Routes>
               <Route path="/" element={<Login />} />
