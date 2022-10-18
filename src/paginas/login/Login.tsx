@@ -10,8 +10,11 @@ import { addToken, addId } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 import { UserLogin } from "../../model/UserLogin";
 import GoogleLogin from "react-google-login";
+import { SyncLoader } from "react-spinners";
 
 export function Login() {
+
+    const [loading, setLoading] = useState(false);
 
     let navigate = useNavigate()
     const dispatch = useDispatch()
@@ -46,9 +49,10 @@ export function Login() {
 
     async function conectar(event:ChangeEvent<HTMLFormElement>){
         event.preventDefault();
+        setLoading(true)
         try{
           await login(`/usuarios/logar`,userLogin, setRespUserLogin);
-
+          
           toast.success('Usuário logado com sucesso!', {
             position: "top-center",
             autoClose: 2000,
@@ -61,6 +65,7 @@ export function Login() {
         });
 
         }catch(error){
+          setLoading(false)
           toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
             position: "top-center",
             autoClose: 2000,
@@ -87,6 +92,7 @@ export function Login() {
 
     useEffect(() => {
         if(token!==''){
+            
             dispatch(addToken(token))
             navigate('/home')
         }
@@ -158,10 +164,14 @@ export function Login() {
                 variant="filled"
                 margin="normal"
               />
-            <Box marginTop={2} textAlign='center'>
+            <Box marginTop={5} textAlign='center'>
                     <Button type="submit" variant="contained" disabled={!entrar}>
                         Entrar
                     </Button>
+                    {loading?(<SyncLoader className="loading-login" size={5} color={'#36D7B7'} loading={loading}/>)
+                    :(<SyncLoader className="loading-login" size={0} color={'#36D7B7'} loading={true}/>)}
+                    
+
             </Box>
                 
             </form>

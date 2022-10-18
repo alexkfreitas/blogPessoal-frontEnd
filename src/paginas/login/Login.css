@@ -95,3 +95,7 @@ body{
 
 .MuiInputBase-input{
 }
+
+.loading-login{
+    margin: 5px;
+}
