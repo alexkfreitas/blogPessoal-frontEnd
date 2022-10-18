@@ -59,7 +59,7 @@ export function ListaPostagem() {
       {
         posts.map(post => (
           <Box m={2} className="margin-box">
-            <Card variant="outlined">
+            <Card variant="outlined" className="card-fundo">
               <CardContent>
                 <Typography variant="h5" component="h2">
                   {post.titulo}

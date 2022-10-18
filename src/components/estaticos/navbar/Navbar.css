@@ -42,7 +42,6 @@
 .itens-font{
     display: inline;
     margin: 0 10px !important;
-    font-family: 'Dancing Script', cursive !important;
     font-family: 'Peralta', cursive !important;
     transition: all 0.5s;
 }

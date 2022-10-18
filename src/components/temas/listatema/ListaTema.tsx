@@ -49,7 +49,7 @@ export function ListaTema() {
     {
       temas.map(tema =>(
       <Box m={2} className='margin-temas'>
-        <Card variant="outlined">
+        <Card variant="outlined" className="card-fundo">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Tema

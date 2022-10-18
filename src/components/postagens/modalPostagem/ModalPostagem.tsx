@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
+      // padding: theme.spacing(0, 5, 20),
+      padding: 40
     },
   }),
 );
@@ -62,7 +63,8 @@ export function ModalPostagem () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
+        onClick={handleOpen}>Nova Postagem
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}

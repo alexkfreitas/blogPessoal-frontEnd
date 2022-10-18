@@ -131,7 +131,7 @@ export function Login() {
         justifyContent="center"
         className='login'
       >
-          <Box paddingX={20} className='box'>
+          <Box paddingX={10} className='box'>
             <form onSubmit={conectar}>
             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'><img src='https://i.imgur.com/RLltIpo.png' className='logo-size'></img></Typography>
             <Typography variant="h5" className="titulo-blog">Katanosaka Blog</Typography>
@@ -154,8 +154,8 @@ export function Login() {
                 type="password"
                 name="senha"
                 label="Senha"
-                variant="filled"
                 fullWidth
+                variant="filled"
                 margin="normal"
               />
             <Box marginTop={2} textAlign='center'>
@@ -174,16 +174,13 @@ export function Login() {
                     </Link>
                     
             </Box>
-            <Box display='flex' justifyContent='center' marginTop={1}>
-              <Typography  gutterBottom align='center'>Ou</Typography>
-            </Box>
             
           </Box>
           
           
 
       </Grid>
-      <GoogleLogin
+      {/* <GoogleLogin
 				clientId="405026633290-pnhkq91b351crvmg323n2nt5m8n1jt7m.apps.googleusercontent.com"
         buttonText="Entrar com Google"
 				onSuccess={responseGoogle}
@@ -198,7 +195,7 @@ export function Login() {
 				</div>
 			) : (
 				""
-			)}
+			)} */}
     </>
   );
 }
