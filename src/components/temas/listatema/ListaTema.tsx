@@ -8,8 +8,11 @@ import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { Tema } from '../../../model/Tema';
+import { SyncLoader } from 'react-spinners';
 
 export function ListaTema() {
+
+  const [loading, setLoading] = useState(true);
 
     let navigate = useNavigate();
   const[temas, setTemas] = useState<Tema[]>([]);
@@ -36,8 +39,11 @@ export function ListaTema() {
 
   async function getTemas(){
     await busca('/temas', setTemas, {
-      headers: {'Authorization': token}
+      headers: {
+        'Authorization': token
+      },
     })
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -47,6 +53,8 @@ export function ListaTema() {
   return (
     <>
     {
+      loading ? <SyncLoader className="loading" color={'#36D7B7'} loading={loading}/>:
+
       temas.map(tema =>(
       <Box m={2} className='margin-temas'>
         <Card variant="outlined" className="card-fundo">
