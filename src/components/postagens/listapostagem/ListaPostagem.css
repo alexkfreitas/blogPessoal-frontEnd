@@ -20,3 +20,7 @@
 .color-lixo:hover{
     color: red !important;
 }
+
+.loading{
+    margin: 90px;
+}

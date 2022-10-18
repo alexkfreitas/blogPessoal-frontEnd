@@ -9,8 +9,12 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 import { Postagem } from '../../../model/Postagem';
+import { SyncLoader } from 'react-spinners';
 
 export function ListaPostagem() {
+
+const [loading, setLoading] = useState(true);
+
   let navigate = useNavigate();
 
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -39,13 +43,13 @@ export function ListaPostagem() {
   }, [token])
 
   async function getPost() {
-    console.log('Token:'+token);
     
     await busca("/postagens", setPosts, {
       headers: {
         Authorization: token
       },
-    });
+    })
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -57,9 +61,12 @@ export function ListaPostagem() {
   return (
     <>
       {
+
+        loading ? <SyncLoader className="loading" color={'#36D7B7'} loading={loading}/>:
+
         posts.map(post => (
           <Box m={2} className="margin-box">
-            <Card variant="outlined">
+            <Card variant="outlined" className="card-fundo">
               <CardContent>
                 <Typography variant="h5" component="h2">
                   {post.titulo}

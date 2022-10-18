@@ -1,3 +1,28 @@
+body{
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-de-matriz-de-fluxo-de-algoritmo-de-codigo-binario-digital_1017-25328.jpg?w=826&t=st=1666046735~exp=1666047335~hmac=b5d1d195f434e4a3162c7147496fec2cd1371d408f325f05d4809271f3dd81c3);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+.login{
+    margin-top: 60px;
+    
+}
+
+.box{
+    padding: 50px;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(255,255,255,0.07);
+    -webkit-backdrop-filter: blur(11px);
+    backdrop-filter: blur(11px);
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 6% 6% 6% 6% / 6% 6% 6% 6%;
+    
+    
+}
+
 .textos1{
     font-weight:bold !important;
     color: black;
@@ -63,4 +88,10 @@
 
 .MuiButton-contained:disabled{
     background-color: gray !important;
+}
+
+.MuiFilledInput-input{
+}
+
+.MuiInputBase-input{
 }

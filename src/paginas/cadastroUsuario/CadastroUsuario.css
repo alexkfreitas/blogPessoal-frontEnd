@@ -31,3 +31,21 @@
     
     color: black !important;
 } */
+.login-cadastro{
+    margin: 20px 0;
+}
+
+.textfieldzinho{
+    width: 400px;
+}
+
+.box-cadastro{
+    padding: 20px;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(255,255,255,0.07);
+    -webkit-backdrop-filter: blur(11px);
+    backdrop-filter: blur(11px);
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 6% 6% 6% 6% / 6% 6% 6% 6%;
+}
