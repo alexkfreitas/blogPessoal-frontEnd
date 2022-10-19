@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 import { Postagem } from '../../../model/Postagem';
-import { SyncLoader } from 'react-spinners';
+import { PacmanLoader, SyncLoader } from 'react-spinners';
 
 export function ListaPostagem() {
 
@@ -62,7 +62,16 @@ const [loading, setLoading] = useState(true);
     <>
       {
 
-        loading ? <SyncLoader className="loading" color={'#36D7B7'} loading={loading}/>:
+        loading ? 
+        
+        // <PacmanLoader className="loading" color={'#36D7B7'} loading={loading}/>
+        <div className="orbit-spinner">
+        <div className="orbit"></div>
+        <div className="orbit"></div>
+        <div className="orbit"></div>
+        </div>
+        
+        :
 
         posts.map(post => (
           <Box m={2} className="margin-box">

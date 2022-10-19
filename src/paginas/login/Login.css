@@ -99,3 +99,8 @@ body{
 .loading-login{
     margin: 5px;
 }
+
+.fundo:focus{
+    color: black !important ;
+    border-radius: 8px !important;
+}

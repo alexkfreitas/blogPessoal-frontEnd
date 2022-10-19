@@ -152,6 +152,7 @@ export function Login() {
                 type="e-mail"
                 fullWidth
                 margin="normal"
+                className='fundo'
               />
               <TextField
                 onChange={(event:ChangeEvent<HTMLInputElement>)=>updateModel(event)}

@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import "./CadastroUsuario.css";
 import { toast } from "react-toastify";
 import { Usuario } from "../../model/User";
+import { SyncLoader } from "react-spinners";
 
 export function CadastroUsuario() {
   let navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const [confirmarSenha, setConfirmarSenha] = useState<String>("");
 
@@ -57,9 +59,10 @@ export function CadastroUsuario() {
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
+    setLoading(true)
     if (confirmarSenha == user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      toast.success("Usuário cadastradp com sucesso!", {
+      toast.success("Usuário cadastrado com sucesso!", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -70,6 +73,7 @@ export function CadastroUsuario() {
         progress: undefined,
       });
     } else {
+      setLoading(false)
       toast.error(
         "Dados inconsistentes. Favor verificar as informações de cadastro!",
         {
@@ -175,6 +179,8 @@ export function CadastroUsuario() {
               >
                 Cadastrar
               </Button>
+              {loading?(<SyncLoader className="loading-login" size={5} color={'#36D7B7'} loading={loading}/>)
+                    :(<SyncLoader className="loading-login" size={0} color={'#36D7B7'} loading={true}/>)}
             </Box>
           </form>
 
