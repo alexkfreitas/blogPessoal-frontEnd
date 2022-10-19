@@ -64,12 +64,12 @@ const [loading, setLoading] = useState(true);
 
         loading ? 
         
-        // <PacmanLoader className="loading" color={'#36D7B7'} loading={loading}/>
-        <div className="orbit-spinner">
-        <div className="orbit"></div>
-        <div className="orbit"></div>
-        <div className="orbit"></div>
-        </div>
+        <PacmanLoader className="loading" color={'#36D7B7'} loading={loading}/>
+        // <div className="orbit-spinner">
+        // <div className="orbit"></div>
+        // <div className="orbit"></div>
+        // <div className="orbit"></div>
+        // </div>
         
         :
 

@@ -100,7 +100,6 @@ body{
     margin: 5px;
 }
 
-.fundo:focus{
-    color: black !important ;
-    border-radius: 8px !important;
+input label{
+    color: black !important;
 }
